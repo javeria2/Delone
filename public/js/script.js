@@ -5,7 +5,7 @@ $(document).ready(function(){
      loop: true
 	}).tiType('New to some place?').tiPause(900).tiDelete()
 	.tiType('Looking for someone to eat with?').tiPause(900).tiDelete()
-	.tiType('Delone will come to your rescue.').tiPause(900).tiDelete()
+	.tiType('<em>Delone</em> will come to your rescue.').tiPause(900).tiDelete()
 	.tiType('With <em>Delone</em> you don\'t have to eat alone.').tiPause(900).tiDelete();
 });
 
