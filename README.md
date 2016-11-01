@@ -3,7 +3,7 @@
 - Have you ever been subjected to a completely new surrounding, like join a new school, get a new job and found yourself with no one to eat or hangout with?  This application aims to solve this frequent user problem by providing a platform where poeple could interact and arrange to eat together. 
 
 ## Tech Specs - 
-* grunt task runner used to compile scss/sass file to css stylesheet __(grunt-contrib-sass)__ and task automation to reload browser __(live reload)__.
+* __grunt task runner__ used to compile scss/sass file to css stylesheet __(grunt-contrib-sass)__ and task automation to reload browser __(live reload)__.
 * __SASS__ used as a pre-processor for manageable and neat css code.
 * __Angular__ used for routing and data-binding. (SPA)
 * __Node__ and __Express__ used for RESTful routing. 
