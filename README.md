@@ -10,7 +10,7 @@
 * __mongoDB__ and __mongoose__ used for database querying.
 
 ## Installation
-I'll provide a walkthrough for mac users, windows would be similar just the installation commands would slightly differ (a simple google search would pull up those commands for you!). 
+I'll provide a walkthrough for mac users, windows should be similar just the installation commands would slightly differ (a simple google search would pull up those commands for you!) 
 
 * First, you need to have ```sass``` installed on your PC, do it using the following command on your terminal ```sudo gem install sass``` (Install ruby gems if you don't have it), you can check the version using ```sass -v``` once done installing. 
 * navigate into this folder from command line and type in ```npm install --save-dev```, this command will automatically install all the required packages and save it locally as a dev dependency. 
