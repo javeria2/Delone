@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'League-Spartan';
+  src: url("_webfonts/leaguespartan-bold.eot");
+  src: url("_webfonts/leaguespartan-bold.eot?#iefix") format("embedded-opentype"), url("_webfonts/leaguespartan-bold.woff2") format("woff2"), url("_webfonts/leaguespartan-bold.woff") format("woff"), url("_webfonts/leaguespartan-bold.ttf") format("truetype"), url("_webfonts/leaguespartan-bold.svg#league_spartanbold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+/*=============*/
+/* BASIC SETUP */
+/*=============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html,
+body {
+  color: #262222;
+  font-family: 'League-Spartan', sans-serif;
+  font-size: 25px;
+  /*base font-size*/
+  font-weight: 300;
+  text-rendering: optimizeLegibility; }
+
+h1 {
+  text-transform: uppercase; }
+
+/* BUTTONS */
+.btn:link, .btn:visited {
+  text-decoration: none;
+  color: white;
+  border-radius: 100px;
+  display: inline-block;
+  /* to give some padding, a mix between inline and block elements*/
+  padding: 10px 30px;
+  font-weight: 200;
+  margin-top: 30px;
+  transition: all 0.3s;
+  border: 1px solid #e47336;
+  /* common attributes to both buttons */ }
+
+.btn-border:link, .btn-border:visited {
+  color: #e47336; }
+
+.btn-border:hover, .btn-border:active {
+  color: white;
+  background-color: #e47336; }
+
+/*============*/
+/* ANIMATIONS */
+/*============*/
+.page.ng-leave {
+  z-index: 9999; }
+
+.page.ng-enter {
+  z-index: 8888; }
+
+.page-home.ng-leave {
+  animation: slideOutLeft 0.5s both ease-in; }
+
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-100%); } }
+
+/*==========*/
+/* HOMEPAGE */
+/*==========*/
+.homepage {
+  position: relative;
+  font-family: 'League-Spartan';
+  background-color: #111111;
+  height: 100vh;
+  overflow: hidden; }
+  .homepage .top-cut {
+    position: absolute;
+    font-size: 10rem;
+    top: -8%;
+    color: #171717;
+    -webkit-user-select: none;
+    /* Chrome/Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+ */
+    -o-user-select: none;
+    /*Opera */
+    user-select: none; }
+  .homepage .main-headline {
+    -webkit-user-select: none;
+    /* Chrome/Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+ */
+    -o-user-select: none;
+    /*Opera */
+    user-select: none;
+    position: absolute;
+    width: 1140px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-60%, -50%);
+    -o-transform: translate(-60%, -50%);
+    -webkit-transform: translate(-60%, -50%);
+    -moz-transform: translate(-60%, -50%);
+    -ms-transform: translate(-60%, -50%); }
+    .homepage .main-headline h1 {
+      color: #fff;
+      font-size: 5rem; }
+  .homepage .type-it {
+    color: #e47336; }

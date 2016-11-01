@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="delone">
+<head>
+	<!-- metadata -->
+	<meta charset="utf-8">
+	<title>Delone &copy;</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- custom stylesheet -->
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<!-- Angualar -->
+	<script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-animate.min.js"></script>
+
+    <!-- Angular controller/services/directives -->
+    <script src="js/module/module.js"></script>
+    <script src="js/routes/routes.js"></script>
+    <script src="js/controller/controller.js"></script>
+
+    <!-- typeIt -->
+    <script src="https://cdn.jsdelivr.net/jquery.typeit/4.2.3/typeit.min.js"></script>
+</head>
+<body>
+
+<div class="page {{pageClass}}" ng-view></div>
+
+<script src="http://localhost:35729/livereload.js"></script> <!-- grunt live server -->
+</body>
+</html>

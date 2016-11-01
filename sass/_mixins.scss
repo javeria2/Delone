@@ -1,0 +1,15 @@
+@mixin transform($x, $y){
+	transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+    -webkit-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+}
+
+@mixin user-select($x){
+	-webkit-user-select: $x; /* Chrome/Safari */        
+	-moz-user-select: $x; /* Firefox */
+	-ms-user-select: $x; /* IE10+ */
+	-o-user-select: $x; /*Opera */
+	user-select: $x;
+}
