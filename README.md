@@ -7,7 +7,7 @@
 * __SASS__ used as a pre-processor for manageable and neat css code.
 * __Angular__ used for routing and data-binding. (SPA)
 * __Node__ and __Express__ used for RESTful routing. 
-* __mongoDB__ and __mongoose__ used for database.
+* __mongoDB__ and __mongoose__ used for database querying.
 
 ## Installation
 I'll provide a walkthrough for mac users, windows would be similar just the installation commands would slightly differ (a simple google search would pull up those commands for you!). 
