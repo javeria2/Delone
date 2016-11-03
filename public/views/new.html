@@ -1,0 +1,90 @@
+<a class="btn-floating btn-large waves-effect waves-light" id="back-button" href="#/events"><i class="fa fa-angle-left"></i></a>
+<div class="container">
+  <div class="col s12 m6" id="card-data">
+    <div class="card darken-1">
+      <div class="card-content">
+        <div class="card-title">Where are you eating today?</div>
+        <p>Got some plans? Don't eat alone.</p>
+        <div class="row" id="event-form">
+          <form>
+          <!-- name -->
+            <div class="col s6">
+              <div class="input-field">
+                <input id="event_name" type="text" class="validate" ng-model="event_name">
+                <label for="event_name">What should we call your event?</label>
+              </div>
+
+              <!-- restaurant name -->
+              <div class="input-field">
+                <input ng-model="chosenPlace" details="chosenPlaceDetails" type="text" class="validate" id="event_location" placeholder="" googleplace/>
+                <label for="event_location">What's the name of the restaurant?</label>
+              </div>
+
+              <!-- date -->
+              <div class="input-field">
+                <input type="date" class="datepicker" id="event-date" ng_model="date">
+                <label for="event-date">When is this happening?</label>
+              </div>
+
+              <!-- time -->
+              <div class="input-field">
+              <i class="material-icons prefix">av_timer</i>
+                <select ng_model="time">
+                  <option value="" disabled selected>What time?</option>
+                  <option value="1">9 AM</option>
+                  <option value="2">9 AM</option>
+                  <option value="3">10 AM</option>
+                  <option value="4">11 AM</option>
+                  <option value="5">12 PM</option>
+                  <option value="6">1 PM</option>
+                  <option value="7">2 PM</option>
+                  <option value="8">3 PM</option>
+                  <option value="9">4 PM</option>
+                  <option value="10">5 PM</option>
+                  <option value="11">6 PM</option>
+                  <option value="12">7 PM</option>
+                  <option value="13">8 PM</option>
+                  <option value="14">9 PM</option>
+                  <option value="15">10 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- map -->
+            <div class="col s5 offset-s1">
+                <div id="map"></div>
+            </div>
+
+            <!-- no. of guests -->
+            <div class="input-field col s12 m4"> 
+              <input type="number" id="guest-count" ng_model="count" class="validate">
+              <label for="guest-count">How many people can join in?</label>
+            </div>
+
+            <!-- msgs -->
+            <div class="input-field col s12 m4">
+              <input type="text" id="bio" ng_model="msg" class="validate">
+              <label for="bio">Any message for your guest(s)?</label>
+            </div>
+
+            <!-- image -->
+            <div class="input-field col s12 m4"> 
+              <input type="text" id="img" mg_model="img" class="validate">
+              <label for="img">Leave a nice image url</label>
+            </div>
+
+            <button id="post-button" class="btn waves-effect waves-light" ng-click="addEvent();">Create event! <i class="material-icons right">send</i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+  body {
+    background: rgb(241, 241, 241);
+  }
+</style>
+
+<script type="text/javascript" src="js/scripts/newEvent.js"></script>

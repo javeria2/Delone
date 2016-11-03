@@ -20,13 +20,14 @@ body {
   font-size: 25px;
   /*base font-size*/
   font-weight: 300;
-  text-rendering: optimizeLegibility; }
+  text-rendering: optimizeLegibility;
+  position: relative; }
 
-h1 {
+.custom-header {
   text-transform: uppercase; }
 
 /* BUTTONS */
-.btn:link, .btn:visited {
+.custom-button:link, .custom-button:visited {
   text-decoration: none;
   color: white;
   border-radius: 100px;
@@ -39,10 +40,10 @@ h1 {
   border: 1px solid #e47336;
   /* common attributes to both buttons */ }
 
-.btn-border:link, .btn-border:visited {
+.custom-button-border:link, .custom-button-border:visited {
   color: #e47336; }
 
-.btn-border:hover, .btn-border:active {
+.custom-button-border:hover, .custom-button-border:active {
   color: white;
   background-color: #e47336; }
 
@@ -62,6 +63,19 @@ h1 {
   to {
     transform: translateX(-100%); } }
 
+/*=========*/
+/* NAV BAR */
+/*=========*/
+.menu-bar {
+  position: relative;
+  top: 30px;
+  margin-right: 20px; }
+  .menu-bar .menu-bar-color {
+    background: #e47336 !important; }
+    .menu-bar .menu-bar-color .custom-icon {
+      text-align: center;
+      margin-top: 7px; }
+
 /*==========*/
 /* HOMEPAGE */
 /*==========*/
@@ -73,8 +87,9 @@ h1 {
   overflow: hidden; }
   .homepage .top-cut {
     position: absolute;
-    font-size: 10rem;
-    top: -8%;
+    font-size: 28.5rem;
+    top: -12%;
+    left: -3%;
     color: #171717;
     -webkit-user-select: none;
     /* Chrome/Safari */
@@ -104,8 +119,50 @@ h1 {
     -webkit-transform: translate(-60%, -50%);
     -moz-transform: translate(-60%, -50%);
     -ms-transform: translate(-60%, -50%); }
-    .homepage .main-headline h1 {
+    .homepage .main-headline .custom-header {
       color: #fff;
-      font-size: 5rem; }
+      font-size: 7rem; }
   .homepage .type-it {
     color: #e47336; }
+
+/*============*/
+/* EVENT PAGE */
+/*============*/
+#new-event-button {
+  margin: 20px;
+  background: #e47336 !important; }
+
+/*============*/
+/* EVENT FORM */
+/*============*/
+#back-button {
+  background: #e47336 !important;
+  position: fixed;
+  top: 30px;
+  left: 20px; }
+
+#card-data {
+  margin: 100px; }
+  #card-data .card-content {
+    padding: 50px !important; }
+    #card-data .card-content #event-form {
+      margin-top: 30px; }
+  #card-data .card-title {
+    font-size: 2.3rem !important;
+    color: #e47336; }
+    #card-data .card-title + p {
+      font-size: 1.5rem !important;
+      margin-top: 10px; }
+
+#map {
+  height: 300px;
+  margin: 20px 0;
+  border-radius: 5px;
+  border: 1px solid silver; }
+
+#post-button {
+  text-transform: none;
+  font-size: 1rem;
+  margin-left: 38%;
+  margin-top: 5%;
+  background: #e47336 !important; }

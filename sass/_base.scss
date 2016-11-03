@@ -15,14 +15,15 @@ body {
     font-size: 25px; /*base font-size*/
     font-weight: 300;
     text-rendering: optimizeLegibility;
+    position: relative;
 }
 
-h1{		
+.custom-header{		
 	text-transform: uppercase;
 }
 
 /* BUTTONS */
-.btn {
+.custom-button {
 	&:link,
 	&:visited {
 		text-decoration: none;
@@ -37,7 +38,7 @@ h1{
 	}
 }
 
-.btn-border{
+.custom-button-border{
 	&:link,
 	&:visited{
     	color: $type-it-color;
@@ -63,6 +64,23 @@ h1{
 	to { transform: translateX(-100%); }
 }
 
+/*=========*/
+/* NAV BAR */
+/*=========*/
+.menu-bar{
+	position: relative;
+	top: 30px;
+	margin-right: 20px;
+
+	.menu-bar-color {
+		background: $type-it-color !important;
+		.custom-icon {
+			text-align: center;
+			margin-top: 7px;
+		}
+	}
+}
+
 /*==========*/
 /* HOMEPAGE */
 /*==========*/
@@ -74,8 +92,9 @@ h1{
 	overflow: hidden;
 	.top-cut {
 		position: absolute;
-		font-size: 10rem;
-		top: -8%;
+		font-size: 28.5rem;
+		top: -12%;
+		left: -3%;
 		color: $top-cut-color;
 		@include user-select(none);
 	}
@@ -86,12 +105,61 @@ h1{
 	    top: 45%;
 	    left: 50%;
 	    @include transform(-60%, -50%);
-		h1 {
+		.custom-header {
 			color: #fff;
-			font-size: 5rem;
+			font-size: 7rem;
 		}
 	}
 	.type-it {
 		color: $type-it-color;
 	}
+}
+
+/*============*/
+/* EVENT PAGE */
+/*============*/
+#new-event-button {
+	margin: 20px;
+	background: $type-it-color !important;
+}
+
+/*============*/
+/* EVENT FORM */
+/*============*/
+#back-button {
+	background: $type-it-color !important;
+	position: fixed;
+	top: 30px;
+	left: 20px;
+}
+
+#card-data {
+	margin: 100px;
+	.card-content {
+	padding: 50px !important;
+		#event-form {
+			margin-top: 30px;
+		}
+	}
+	.card-title {
+		font-size: 2.3rem !important;
+		color: $type-it-color;
+		+ p {
+			font-size: 1.5rem !important;
+			margin-top: 10px;
+		}
+	}
+}
+#map { 
+	height: 300px;
+	margin: 20px 0;
+	border-radius: 5px;
+	border: 1px solid silver;
+}
+#post-button {
+	text-transform: none;
+	font-size: 1rem;
+	margin-left: 38%;
+    margin-top: 5%;
+	background: $type-it-color !important;
 }

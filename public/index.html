@@ -9,27 +9,62 @@
 	<!-- custom stylesheet -->
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 
-	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<!-- Angualar -->
-	<script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+    <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
+
+    <!-- Angular services -->
     <script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
     <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
     <script src="https://code.angularjs.org/1.5.8/angular-animate.min.js"></script>
 
+
     <!-- Angular controller/services/directives -->
-    <script src="js/module/module.js"></script>
-    <script src="js/routes/routes.js"></script>
-    <script src="js/controller/controller.js"></script>
+    <script src="js/module.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/controller.js"></script>
 
     <!-- typeIt -->
     <script src="https://cdn.jsdelivr.net/jquery.typeit/4.2.3/typeit.min.js"></script>
+
+    <!-- Google places API -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBndUeoWl1WxMpgm1bJ9Ge899BuRdk4iR0&libraries=places"></script>
+
+    <!-- fontastic -->
+    <link href="https://file.myfontastic.com/X9Fi5hPV3VGY2Yh5NaPfLi/icons.css" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <!-- <script src="https://use.fontawesome.com/2960686916.js"></script> -->
+
+
 </head>
 <body>
 
+  <div class="fixed-action-btn horizontal menu-bar">
+    <a class="btn-floating btn-large tooltipped menu-bar-color" data-position="bottom" data-delay="50" data-tooltip="Hi Jon Snow!" href="#/">
+      <i class="fa fa-user"></i>
+    </a>
+    <ul>
+      <li><a class="btn-floating btn-medium tooltipped menu-bar-color" data-position="bottom" data-delay="50" data-tooltip="Sign Up"><i class="icon-sign-out custom-icon"></i></a></li>
+      <li><a class="btn-floating btn-medium tooltipped menu-bar-color" data-position="bottom" data-delay="50" data-tooltip="Login"><i class="icon-sign-in custom-icon"></i></a></li>
+    </ul>
+  </div>
+
 <div class="page {{pageClass}}" ng-view></div>
 
+
 <script src="http://localhost:35729/livereload.js"></script> <!-- grunt live server -->
+  <script>
+  $(document).ready(function(){
+     $('.tooltipped').tooltip({delay: 50});
+  });
+  </script>
 </body>
 </html>

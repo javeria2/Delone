@@ -8,4 +8,8 @@ delone.config(function($routeProvider){
 		templateUrl: 'views/events.html',
 		controller: 'eventController'
 	})
+	.when('/events/new', {
+		templateUrl: 'views/new.html',
+		controller: 'newEventController'
+	})
 });

@@ -1,4 +1,10 @@
 <div ng-repeat="event in events">
-	<p>{{event.name}}</p>
-	<p>{{event.food}}</p>
+	<p>{{event.event_name}}</p>
+	<p>{{event.place}}</p>
+</div>
+
+<div class="fixed-action-btn">
+	<a href="#/events/new" id="new-event-button" class="btn-floating btn-large waves-effect waves-light">
+	  <i class="large material-icons">mode_edit</i>
+	</a>
 </div>
