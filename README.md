@@ -3,11 +3,11 @@
 - Have you ever been subjected to a completely new surrounding, like join a new school, get a new job and found yourself with no one to eat or hangout with?  This application aims to solve this frequent user problem by providing a platform where poeple could interact and arrange to eat together. 
 
 ## Tech Specs - 
-* __grunt task runner__ used to compile scss/sass file to single css stylesheet __(grunt-contrib-sass)__ and task automation to reload browser __(live reload)__.
-* __SASS__ used as a pre-processor for manageable and neat css code.
 * __Angular__ used for routing and data-binding. (SPA)
 * __Node__ and __Express__ used for RESTful routing. 
 * __mongoDB__ and __mongoose__ used for database querying.
+* __Passport.js__ used for local OAuth.
+* __SASS__ used as a pre-processor for manageable and neat css code.
 
 ## Installation
 I'll provide a walkthrough for mac users, windows should be similar just the installation commands would slightly differ (a simple google search would pull up those commands for you!) 
