@@ -1,0 +1,34 @@
+
+/*==========*/
+/* HOMEPAGE */
+/*==========*/
+.homepage {
+	position: relative;
+	font-family: 'League-Spartan';
+	background-color: $homepage-bg;
+	height: 100vh;
+	overflow: hidden;
+	.top-cut {
+		position: absolute;
+		font-size: 28.5rem;
+		top: -12%;
+		left: -3%;
+		color: $top-cut-color;
+		@include user-select(none);
+	}
+	.main-headline {
+		@include user-select(none);
+		position: absolute;
+	    width: 1140px;
+	    top: 45%;
+	    left: 50%;
+	    @include transform(-60%, -50%);
+		.custom-header {
+			color: #fff;
+			font-size: 7rem;
+		}
+	}
+	.type-it {
+		color: $type-it-color;
+	}
+}

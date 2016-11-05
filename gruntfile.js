@@ -4,13 +4,13 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          'public/styles/styles.css' : 'sass/styles.scss'
+          'client/styles/styles.css' : 'client/sass/styles.scss'
         } //files
       }//dist
     }, //sass
     watch: {
       source: {
-        files: ['sass/**/*.scss'],
+        files: ['client/sass/**/*.scss'],
         tasks: ['sass'],
         options: {
           livereload: true, // needed to run LiveReload

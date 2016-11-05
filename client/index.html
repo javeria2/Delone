@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="delone">
+<head>
+	<!-- metadata -->
+	<meta charset="utf-8">
+	<title>Delone &copy;</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- custom stylesheet -->
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="rsrcs/css/materialize.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
+
+  <!-- Angular services -->
+  <script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+  <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
+  <script src="https://code.angularjs.org/1.5.8/angular-animate.min.js"></script>
+
+
+  <!-- Angular controller/services/directives -->
+  <script src="js/module.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/controller.js"></script>
+
+  <!-- typeIt -->
+  <script src="https://cdn.jsdelivr.net/jquery.typeit/4.2.3/typeit.min.js"></script>
+
+  <!-- Google places API -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBndUeoWl1WxMpgm1bJ9Ge899BuRdk4iR0&libraries=places"></script>
+
+  <!-- fontastic -->
+  <link href="https://file.myfontastic.com/X9Fi5hPV3VGY2Yh5NaPfLi/icons.css" rel="stylesheet">
+
+  <!-- fontawesome -->
+  <script src="https://use.fontawesome.com/2960686916.js"></script>
+
+  <!-- Masonry -->
+  <script type="text/javascript" src="http://masonry.desandro.com/masonry.pkgd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="https://passy.github.io/angular-masonry/angular-masonry.min.js"></script>
+
+  <!-- tooltipster -->
+  <link rel="stylesheet" type="text/css" href="rsrcs/css/tooltipster.bundle.min.css">
+  <link rel="stylesheet" type="text/css" href="rsrcs/css/tooltipster-sideTip-borderless.min.css">
+  <script type="text/javascript" src="rsrcs/js/tooltipster.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="page {{pageClass}}" ng-view></div>
+
+<script src="http://localhost:35729/livereload.js"></script> <!-- grunt live server -->
+</body>
+</html>

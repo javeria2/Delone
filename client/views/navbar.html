@@ -1,0 +1,17 @@
+  <div ng-controller="navBarController" class="fixed-action-btn horizontal click-to-toggle menu-bar">
+    <a class="btn-floating btn-large tooltip menu-bar-color" title="Hi {{user.username}}!">
+      <i class="fa fa-user"></i>
+    </a>
+    <ul>
+      <li><a ng-click="logout()" class="btn-floating btn-medium tooltip menu-bar-color" title="Sign Out"><i class="fa fa-sign-out"></i></a></li>
+      <li><a class="btn-floating btn-medium tooltip menu-bar-color" title="Login"><i class="icon-person"></i></a></li>
+    </ul>
+  </div>
+
+<script>
+  $(document).ready(function(){
+  	$('.tooltip').tooltipster({
+  		theme: 'tooltipster-borderless'
+  	});
+  });
+</script>

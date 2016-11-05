@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400");
 @font-face {
   font-family: 'League-Spartan';
   src: url("_webfonts/leaguespartan-bold.eot");
@@ -68,13 +69,10 @@ body {
 /*=========*/
 .menu-bar {
   position: relative;
-  top: 30px;
-  margin-right: 20px; }
+  top: 35px;
+  margin-right: 35px; }
   .menu-bar .menu-bar-color {
     background: #e47336 !important; }
-    .menu-bar .menu-bar-color .custom-icon {
-      text-align: center;
-      margin-top: 7px; }
 
 /*==========*/
 /* HOMEPAGE */
@@ -125,12 +123,68 @@ body {
   .homepage .type-it {
     color: #e47336; }
 
+.login-container {
+  text-align: center; }
+  .login-container #login-card {
+    display: inline-block;
+    padding: 32px 48px 0px 48px;
+    width: 50%; }
+  .login-container .input-field.col.s12 {
+    padding: 0 !important; }
+  .login-container label {
+    text-align: left; }
+  .login-container a {
+    cursor: pointer; }
+  .login-container #btn_login {
+    background-color: #e47336; }
+  .login-container .spt-text {
+    color: #e47336; }
+  .login-container .lower-cap {
+    margin-bottom: 20px; }
+  .login-container .card-title {
+    font-family: 'League-Spartan';
+    text-transform: uppercase;
+    color: #e47336;
+    font-size: 2.5rem !important;
+    user-select: none; }
+
 /*============*/
 /* EVENT PAGE */
 /*============*/
 #new-event-button {
-  margin: 20px;
+  margin: 35px;
   background: #e47336 !important; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: sans-serif; }
+
+/* ---- grid ---- */
+.grid {
+  max-width: 700px;
+  margin: 0 auto; }
+
+.event-grid {
+  margin-top: 40px !important; }
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+/* ---- grid-item ---- */
+.grid-item {
+  width: 350px;
+  float: left;
+  /* vertical gutter */
+  margin-bottom: 10px; }
+
+.event-img {
+  background: linear-gradient(transparent, black);
+  width: 100%; }
 
 /*============*/
 /* EVENT FORM */
@@ -138,8 +192,8 @@ body {
 #back-button {
   background: #e47336 !important;
   position: fixed;
-  top: 30px;
-  left: 20px; }
+  top: 32px;
+  left: 30px; }
 
 #card-data {
   margin: 100px; }
@@ -149,10 +203,12 @@ body {
       margin-top: 30px; }
   #card-data .card-title {
     font-size: 2.3rem !important;
+    font-family: 'League-Spartan';
     color: #e47336; }
     #card-data .card-title + p {
       font-size: 1.5rem !important;
-      margin-top: 10px; }
+      margin-top: 10px;
+      font-family: 'League-Spartan'; }
 
 #map {
   height: 300px;
@@ -163,6 +219,7 @@ body {
 #post-button {
   text-transform: none;
   font-size: 1rem;
+  font-family: 'League-Spartan';
   margin-left: 38%;
   margin-top: 5%;
   background: #e47336 !important; }

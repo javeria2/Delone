@@ -1,0 +1,25 @@
+<div ng-include="'views/navbar.html'"></div>
+
+<h1>This will be the show page for this event.</h1>
+
+<input type="text" ng-model="comment">
+<button ng-click="submitComment(); template='page2'">Post</button>
+<div id="update"></div>
+
+<div ng-repeat="comment in event.comments">
+	{{comment.text}}
+</div>
+
+<ng-include src="template"></ng-include>
+
+<script type="text/ng-template" id="page2">
+	<div ng-repeat="comment in showComment">
+		{{comment}}
+	</div>
+</script>
+
+<div class="fixed-action-btn">
+	<a href="#/events/new" id="new-event-button" class="btn-floating btn-large waves-effect waves-light tooltip" title="New event!">
+	  <i class="large material-icons">mode_edit</i>
+	</a>
+</div>

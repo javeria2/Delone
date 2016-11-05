@@ -1,0 +1,44 @@
+
+/*============*/
+/* EVENT FORM */
+/*============*/
+#back-button {
+	background: $type-it-color !important;
+	position: fixed;
+	top: 32px;
+	left: 30px;
+}
+
+#card-data {
+	margin: 100px;
+	.card-content {
+	padding: 50px !important;
+		#event-form {
+			margin-top: 30px;
+		}
+	}
+	.card-title {
+		font-size: 2.3rem !important;
+		font-family: 'League-Spartan';
+		color: $type-it-color;
+		+ p {
+			font-size: 1.5rem !important;
+			margin-top: 10px;
+			font-family: 'League-Spartan';
+		}
+	}
+}
+#map { 
+	height: 300px;
+	margin: 20px 0;
+	border-radius: 5px;
+	border: 1px solid silver;
+}
+#post-button {
+	text-transform: none;
+	font-size: 1rem;
+	font-family: 'League-Spartan';
+	margin-left: 38%;
+    margin-top: 5%;
+	background: $type-it-color !important;
+}

@@ -1,0 +1,33 @@
+.login-container{
+  text-align: center;
+  #login-card {
+  	display: inline-block; 
+  	padding: 32px 48px 0px 48px; 
+  	width: 50%;
+  }
+  .input-field.col.s12 {
+  	padding: 0 !important;
+  }
+  label {
+    text-align: left;
+  }
+  a {
+  	cursor: pointer;
+  }
+  #btn_login {
+  	background-color: $type-it-color;
+  }
+  .spt-text {
+  	color: $type-it-color;
+  }
+  .lower-cap {
+  	margin-bottom: 20px;
+  }
+  .card-title {
+  	font-family: 'League-Spartan';
+  	text-transform: uppercase;
+  	color: $type-it-color;
+  	font-size: 2.5rem !important;
+    user-select: none;
+  }
+}

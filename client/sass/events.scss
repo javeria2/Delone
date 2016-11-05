@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+/*============*/
+/* EVENT PAGE */
+/*============*/
+#new-event-button {
+	margin: 35px;
+	background: $type-it-color !important;
+}
+
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
+.grid {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.event-grid {
+	margin-top: 40px !important;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 350px;
+  float: left;
+  /* vertical gutter */
+  margin-bottom: 10px;
+}
+
+.event-img {
+  background: linear-gradient(transparent, black);
+  width: 100%;
+}

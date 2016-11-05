@@ -1,4 +1,4 @@
-
+//custom directive for display google maps and autocomplete
 delone.directive('googleplace', function() {
     return {
         require: 'ngModel',

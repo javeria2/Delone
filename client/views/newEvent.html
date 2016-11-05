@@ -1,4 +1,6 @@
-<a class="btn-floating btn-large waves-effect waves-light" id="back-button" href="#/events"><i class="fa fa-angle-left"></i></a>
+<div ng-include="'views/navbar.html'"></div>
+
+<a class="btn-floating btn-large waves-effect waves-light tooltip" id="back-button" title="go back" href="#/events"><i class="fa fa-angle-left"></i></a>
 <div class="container">
   <div class="col s12 m6" id="card-data">
     <div class="card darken-1">
@@ -22,30 +24,30 @@
 
               <!-- date -->
               <div class="input-field">
-                <input type="date" class="datepicker" id="event-date" ng_model="date">
+                <input type="text" class="datepicker" id="event-date" ng-model="date">
                 <label for="event-date">When is this happening?</label>
               </div>
 
               <!-- time -->
               <div class="input-field">
               <i class="material-icons prefix">av_timer</i>
-                <select ng_model="time">
+                <select ng-model="time">
                   <option value="" disabled selected>What time?</option>
-                  <option value="1">9 AM</option>
-                  <option value="2">9 AM</option>
-                  <option value="3">10 AM</option>
-                  <option value="4">11 AM</option>
-                  <option value="5">12 PM</option>
-                  <option value="6">1 PM</option>
-                  <option value="7">2 PM</option>
-                  <option value="8">3 PM</option>
-                  <option value="9">4 PM</option>
-                  <option value="10">5 PM</option>
-                  <option value="11">6 PM</option>
-                  <option value="12">7 PM</option>
-                  <option value="13">8 PM</option>
-                  <option value="14">9 PM</option>
-                  <option value="15">10 PM</option>
+                  <option value="8 AM">8 AM</option>
+                  <option value="9 AM">9 AM</option>
+                  <option value="10 AM">10 AM</option>
+                  <option value="11 AM">11 AM</option>
+                  <option value="12 PM">12 PM</option>
+                  <option value="1 PM">1 PM</option>
+                  <option value="2 PM">2 PM</option>
+                  <option value="3 PM">3 PM</option>
+                  <option value="4 PM">4 PM</option>
+                  <option value="5 PM">5 PM</option>
+                  <option value="6 PM">6 PM</option>
+                  <option value="7 PM">7 PM</option>
+                  <option value="8 PM">8 PM</option>
+                  <option value="9 PM">9 PM</option>
+                  <option value="10 PM">10 PM</option>
                 </select>
               </div>
             </div>
@@ -57,19 +59,19 @@
 
             <!-- no. of guests -->
             <div class="input-field col s12 m4"> 
-              <input type="number" id="guest-count" ng_model="count" class="validate">
+              <input type="number" id="guest-count" ng-model="count" class="validate">
               <label for="guest-count">How many people can join in?</label>
             </div>
 
             <!-- msgs -->
             <div class="input-field col s12 m4">
-              <input type="text" id="bio" ng_model="msg" class="validate">
+              <input type="text" id="bio" ng-model="msg" class="validate">
               <label for="bio">Any message for your guest(s)?</label>
             </div>
 
             <!-- image -->
             <div class="input-field col s12 m4"> 
-              <input type="text" id="img" mg_model="img" class="validate">
+              <input type="text" id="img" ng-model="img" class="validate">
               <label for="img">Leave a nice image url</label>
             </div>
 
@@ -84,6 +86,11 @@
 <style type="text/css">
   body {
     background: rgb(241, 241, 241);
+    font-family: 'Lato';
+  }
+  .pac-container {
+      position: relative;
+      top: 1000px;
   }
 </style>
 
