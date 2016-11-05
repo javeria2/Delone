@@ -128,7 +128,6 @@ delone.controller('authController', ['$rootScope','$scope', '$http','$location',
             }
             $http.post('/login', user).success(function(user){
                 $rootScope.user = user;
-                console.log(user);
                 $location.url('/events');
             });
         } else if($scope.buttonText === 'signup') {
@@ -138,7 +137,6 @@ delone.controller('authController', ['$rootScope','$scope', '$http','$location',
             } 
             $http.post('/signup', user).success(function(user){
                 $rootScope.user = user;
-                console.log(user);
                 $location.url('/events');
             });
         }
