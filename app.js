@@ -7,9 +7,10 @@ var express        = require('express'),
 	delone         = require('./schemas/event'), //include event schema
 	comments       = require('./schemas/comment'),
 	User           = require('./schemas/user');
+
 //include routes
 var eventRoutes    = require('./routes/events'),
-    commentRoutes = require('./routes/comments'),
+    commentRoutes  = require('./routes/comments'),
     authRoutes     = require('./routes/auth');
 
 mongoose.Promise = global.Promise;
@@ -41,7 +42,6 @@ app.use('/events', commentRoutes);
 app.use(authRoutes);
 
 //start up the server
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 5000, function(){
 	console.log('listening!');
 });
-

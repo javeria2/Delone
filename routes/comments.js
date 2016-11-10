@@ -16,6 +16,13 @@ router.post('/:id/comments', function(req, res){
 				console.log(err);
 				return;
 			}
+			//add username and id to the comment
+			comment.author.id = req.user._id;
+			comment.author.username = req.user.username;
+			comment.author.img = req.user.img;
+			comment.save();
+
+			//save the comment to the event
 			event.comments.push(comment);
 			event.save();
 			res.json(comment);

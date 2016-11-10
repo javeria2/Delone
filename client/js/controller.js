@@ -15,7 +15,7 @@ delone.controller('navBarController', ['$rootScope', '$http', '$location', '$sco
 }]);
 
 //events page controller
-delone.controller('eventController', ['$scope', '$http', '$location', function($scope, $http, $location){
+delone.controller('eventController', ['$rootScope','$scope', '$http', '$location', function($rootScope, $scope, $http, $location){
 	$scope.loadEvents = function(response){
 		$scope.events = response;
 	}
@@ -32,18 +32,25 @@ delone.controller('eventController', ['$scope', '$http', '$location', function($
 }]);
 
 // new events controller
-delone.controller('newEventController', ['$scope', '$http', '$location', function($scope, $http, $location) {
+delone.controller('newEventController', ['$rootScope','$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {
     //add a new event to the database
     
     $scope.addEvent = function() {
         var newEvent = {
             event_name : $scope.event_name,
             place : $scope.chosenPlace,
+            latitude: $scope.latitude,
+            longitude: $scope.longitude,
             date : $scope.date,
             time : $scope.time,
             count : $scope.count,
             msg : $scope.msg,
-            img : $scope.img
+            img : $scope.img,
+            author: {
+                id: $rootScope.user._id,
+                username: $rootScope.user.username,
+                img: $rootScope.user.img
+            }
         }
         $http.post('/events', newEvent).success(function(response) {
             $location.path('/events');
@@ -69,20 +76,20 @@ delone.controller('newEventController', ['$scope', '$http', '$location', functio
     $scope.updateMap = function () {
         var place = $scope.gPlace.getPlace();
 
-        var latitude = place.geometry.location.lat();
-        var longitude = place.geometry.location.lng();
+        $scope.latitude = place.geometry.location.lat();
+        $scope.longitude = place.geometry.location.lng();
         var formatted_address = place.formatted_address;
 
-         this.map = new google.maps.Map(
+        this.map = new google.maps.Map(
             document.getElementById("map"), options
         );
         this.places = new google.maps.places.PlacesService(this.map);
         
-        this.map.center.latitude = latitude;
-        this.map.center.longitude = longitude;
+        this.map.center.latitude = $scope.latitude;
+        this.map.center.longitude = $scope.longitude;
         this.map.zoom = 15;
 
-        var myLatlng = new google.maps.LatLng(latitude, longitude);
+        var myLatlng = new google.maps.LatLng($scope.latitude, $scope.longitude);
 
         if(this.marker) this.marker.setMap(null);
         this.marker = new google.maps.Marker({
@@ -95,31 +102,58 @@ delone.controller('newEventController', ['$scope', '$http', '$location', functio
 }]);
 
 //controller to show event information
-delone.controller('eventInfoController', ['$scope', '$http', '$location', function($scope, $http, $location){
+delone.controller('eventInfoController', ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location){
     var url = $location.path();
     $http.get(url).success(function(response) {
         $scope.event = response;
+        var options = {
+            center: new google.maps.LatLng($scope.event.latitude, $scope.event.longitude),
+            zoom: 13,
+            disableDefaultUI: true    
+        }
+        this.map = new google.maps.Map(
+            document.getElementById("map"), options
+        );
+        var myLatlng = new google.maps.LatLng($scope.event.latitude, $scope.event.longitude);
+        this.marker = new google.maps.Marker({
+            map: this.map,
+            position: myLatlng,
+            animation: google.maps.Animation.DROP
+        });
+        this.map.setCenter(myLatlng);
     });
+    
+
+
     $scope.comment = '';
     $scope.showComment = [];
 
     $scope.submitComment = function(){
+        n = new Date();
         var comment = {
             text: $scope.comment,
-            author: ""
+            author: $rootScope.user,
+            date: n.toLocaleString('en-US')
         }
         $http.post(url + '/comments', comment).success(function(res){
-            $scope.showComment.push($scope.comment);
+            $scope.showComment.push(comment);
             $scope.comment = '';
         });
     }
 }]);
 
 //controller for user auth
-delone.controller('authController', ['$rootScope','$scope', '$http','$location', function($rootScope, $scope, $http, $location){
-    $scope.username = '';
-    $scope.password = '';
+delone.controller('authController', ['$rootScope','$scope', '$http','$location', 'AVATARS', function($rootScope, $scope, $http, $location, AVATARS){
     $scope.buttonText = 'login';
+    $('#about-me').hide();
+
+    //get random integer between min and max with min inclusive
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
     $scope.authenticate = function(){
         if($scope.buttonText === 'login') {
             var user = {
@@ -133,7 +167,9 @@ delone.controller('authController', ['$rootScope','$scope', '$http','$location',
         } else if($scope.buttonText === 'signup') {
             var user = {
                 username: $scope.username,
-                password: $scope.password
+                password: $scope.password,
+                about: $scope.about,
+                img: AVATARS.urls[getRandomInt(0, 10)]
             } 
             $http.post('/signup', user).success(function(user){
                 $rootScope.user = user;
@@ -143,9 +179,11 @@ delone.controller('authController', ['$rootScope','$scope', '$http','$location',
     }
     $scope.changeBtText = function() {
         $scope.buttonText = 'signup';
+        $('#about-me').show();
     }
     $scope.loginText = function() {
         $scope.buttonText = 'login';
+        $('#about-me').hide();
     }
     $scope.showPassword = function() {
         var control = $('#test5');

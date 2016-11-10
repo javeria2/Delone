@@ -1,25 +1,158 @@
 <div ng-include="'views/navbar.html'"></div>
+<a class="btn-floating btn-large waves-effect waves-light tooltip" id="back-button" title="go back" href="#/events"><i class="fa fa-angle-left"></i></a>
+<div class="section"></div>
+<div class="section"></div>
+<div class="section"></div>
 
-<h1>This will be the show page for this event.</h1>
+<div class="event-info">
+	<div class="container">
+		<div class="event-header">
+			<div class="row" style="margin: 0px; background-color: #fff;">
+				<div class="col s4 event-owner">
+					<div class="center">
+						<div class="section"></div>
+						<div class="section"></div>
+						<a href="#!">
+							<img class="circle responsive-img" src={{event.author.img}} alt="user-img">
+							<p>{{event.author.username}}</p>
+						</a>
+					</div>
+				</div>
+				<div class="col s4 event-details">
+					<div class="center">
+						<div class="section"></div>
+						<div class="section"></div>
+						<div class="section"></div>
+						<span id="name">{{event.event_name}}</span><br>
+						<div class="section"></div>
+						<span id="rest">
+							<i class="fa fa-clock-o"></i> {{event.time}}
+							<i class="fa fa-calendar"></i> {{event.date}}
+						</span><br>
+						<i class="fa fa-users"></i> {{event.count}} <span ng-if="event.count === '1'">person.</span> 
+						<span ng-if="event.count !== '1'">people.</span>
+					</div>
+				</div>
+				<div class="col s4 event-map">
+					<div id="map"></div>
+				</div>
+			</div>
+			<div class="event-footer">
+				<div class="center">
+					<div class="section"></div>
+					<p><span id="info-text">A message from the delone owner:</span> {{event.msg}}</p>
 
-<input type="text" ng-model="comment">
-<button ng-click="submitComment(); template='page2'">Post</button>
-<div id="update"></div>
+					<div class="section"></div>
+					<p>Delone type: <span id="type">restricted</span></p>
+					<div class="section"></div>
 
-<div ng-repeat="comment in event.comments">
-	{{comment.text}}
-</div>
+					<div id="guest-list">Guest List:</div>
+					 <table class="striped">
+				        <tbody>
+				          <tr>
+				          	<td>
+				          	  <div class="chip">
+							    <img src="../rsrcs/imgs/1.png" alt="Contact Person">
+							    Like Mike
+							  </div>
+					        </td>
+				          </tr>
+				          <tr>
+				          	<td>
+				            	<div class="chip">
+							    	<img src="../rsrcs/imgs/3.png" alt="Contact Person">
+							    	Alan Walker
+							  	</div>
+				          </td>
+				          </tr>
+				          <tr>
+				          	<td>
+				            	<div class="chip">
+							    	<img src="../rsrcs/imgs/4.png" alt="Contact Person">
+							    	Dimitri Vegas
+							  	</div>
+				          </td>
+				          </tr>
+				        </tbody>
+				    </table>
 
-<ng-include src="template"></ng-include>
 
-<script type="text/ng-template" id="page2">
-	<div ng-repeat="comment in showComment">
-		{{comment}}
+				</div>
+			</div>
+		</div>
 	</div>
-</script>
+
+	<div class="section"></div>
+
+	<div class="container">
+		<div class="card z-depth-1">
+			<div id='commentTitle'>Comments:</div>
+			<div class="container">
+				<input type="text" ng-model="comment" placeholder="add a comment..">
+				<button id="post-button" class="btn waves-effect waves-light" ng-click="submitComment(); template='page2'">Post</button>
+				<div class="section"></div>
+				<div id="update"></div>
+
+				<ng-include src="template"></ng-include>
+
+				<script type="text/ng-template" id="page2">
+					<div ng-repeat="comment in showComment">
+						
+						<div class="ui comments">
+							<div class="comment">
+							    <a class="avatar">
+							      <img src={{comment.author.img}} style="border-radius: 100%;">
+							    </a>
+							    <div class="content">
+							      <a class="author">{{comment.author.username}}</a>
+							      <div class="metadata">
+							        <span class="date">{{comment.date}}</span>
+							      </div>
+							      <div class="text">
+							        {{comment.text}}
+							      </div>
+							    </div>
+							</div>
+						</div>
+					</div>
+				</script>
+
+				<div ng-repeat="comment in event.comments">
+					<div class="ui comments">
+						<div class="comment">
+						    <a class="avatar">
+						      <img src={{comment.author.img}} style="border-radius: 100%;">
+						    </a>
+						    <div class="content">
+						      <a class="author">{{comment.author.username}}</a>
+						      <div class="metadata">
+						        <span class="date">{{comment.date}}</span>
+						      </div>
+						      <div class="text">
+						        {{comment.text}}
+						      </div>
+						    </div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="section"></div>
+		</div>
+	</div>
+</div>
+<div class="section"></div>
+<div class="section"></div>
 
 <div class="fixed-action-btn">
 	<a href="#/events/new" id="new-event-button" class="btn-floating btn-large waves-effect waves-light tooltip" title="New event!">
 	  <i class="large material-icons">mode_edit</i>
 	</a>
 </div>
+
+<style type="text/css">
+	body {
+		background: rgb(241, 241, 241);
+    	font-family: 'Lato';
+	}
+</style>

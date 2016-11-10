@@ -1,0 +1,78 @@
+.event-info{
+	.event-header {
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  		background-color: #fff;
+  		padding: 0px;
+  		min-height: 600px;
+  		.event-owner {
+			background: #FFB75E; /* fallback for old browsers */
+			background: -webkit-linear-gradient(to left, #FFB75E , #ED8F03); /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to left, #FFB75E , #ED8F03); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  			min-height: 400px;
+  			background-color: #aaa;
+  			img {
+  				max-width: 60%;
+  			}
+  			a {
+  				color: black;
+  			}
+  		}
+  		.event-details {
+			background: #141E30; /* fallback for old browsers */
+			background: -webkit-linear-gradient(to left, #141E30 , #243B55); /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to left, #141E30 , #243B55); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        	min-height: 400px;
+  			color: white;
+  			span#name {
+  				font-size: 4rem;
+  			}
+  			span#rest {
+  				font-size: 1.3rem;
+  				text-align: center;
+  				i {
+  					margin: 30px;
+  					margin-right: 0px;
+  				}
+  			}
+  		}
+  		.event-map{
+  			min-height: 400px;
+  			padding: 0 !important;
+  			#map{
+  				min-height: 400px;
+  				margin: 0 !important;
+  				padding: 0 !important;
+  			}
+  		}
+	}
+	.event-footer {
+		#info-text {
+			font-size: 1.4rem;
+			font-weight: 700;
+		}
+		td {
+			text-align: center;
+		}
+		div#guest-list{
+			font-weight: 700;
+			margin-bottom: 10px;
+		}
+		span#type {
+			color: red;
+		}
+	}
+	#post-button{
+		margin: 0;
+	}
+
+  div#commentTitle {
+    color: $type-it-color;
+    font-family: 'League-Spartan';
+    margin: 30px;
+    padding-top: 30px;
+  }
+  .comment {
+    font-size: 1.4rem;
+    margin-bottom: 30px !important;
+  }
+}

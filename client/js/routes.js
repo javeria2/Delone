@@ -32,6 +32,21 @@ delone.config(function($routeProvider){
 	.otherwise('/events')
 });
 
+delone.constant('AVATARS', {
+	urls: [
+		"../rsrcs/imgs/1.png",
+		"../rsrcs/imgs/2.png",
+		"../rsrcs/imgs/3.png",
+		"../rsrcs/imgs/4.png",
+		"../rsrcs/imgs/5.png",
+		"../rsrcs/imgs/6.png",
+		"../rsrcs/imgs/7.png",
+		"../rsrcs/imgs/8.png",
+		"../rsrcs/imgs/9.png",
+		"../rsrcs/imgs/10.png"
+	]
+});
+
 function checkLoggedIn($http, $location, $q, $rootScope) {
 	var deferred = $q.defer();
 	$http.get('/isLoggedIn').success(function(user){

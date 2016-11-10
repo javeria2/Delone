@@ -136,11 +136,15 @@ body {
   .login-container a {
     cursor: pointer; }
   .login-container #btn_login {
-    background-color: #e47336; }
+    background-color: #e47336;
+    position: relative;
+    top: -30px; }
   .login-container .spt-text {
     color: #e47336; }
   .login-container .lower-cap {
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    position: relative;
+    top: -30px; }
   .login-container .card-title {
     font-family: 'League-Spartan';
     text-transform: uppercase;
@@ -223,3 +227,73 @@ body {
   margin-left: 38%;
   margin-top: 5%;
   background: #e47336 !important; }
+
+.event-info .event-header {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: #fff;
+  padding: 0px;
+  min-height: 600px; }
+  .event-info .event-header .event-owner {
+    background: #FFB75E;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #FFB75E, #ED8F03);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #FFB75E, #ED8F03);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 400px;
+    background-color: #aaa; }
+    .event-info .event-header .event-owner img {
+      max-width: 60%; }
+    .event-info .event-header .event-owner a {
+      color: black; }
+  .event-info .event-header .event-details {
+    background: #141E30;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #141E30, #243B55);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #141E30, #243B55);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    min-height: 400px;
+    color: white; }
+    .event-info .event-header .event-details span#name {
+      font-size: 4rem; }
+    .event-info .event-header .event-details span#rest {
+      font-size: 1.3rem;
+      text-align: center; }
+      .event-info .event-header .event-details span#rest i {
+        margin: 30px;
+        margin-right: 0px; }
+  .event-info .event-header .event-map {
+    min-height: 400px;
+    padding: 0 !important; }
+    .event-info .event-header .event-map #map {
+      min-height: 400px;
+      margin: 0 !important;
+      padding: 0 !important; }
+
+.event-info .event-footer #info-text {
+  font-size: 1.4rem;
+  font-weight: 700; }
+
+.event-info .event-footer td {
+  text-align: center; }
+
+.event-info .event-footer div#guest-list {
+  font-weight: 700;
+  margin-bottom: 10px; }
+
+.event-info .event-footer span#type {
+  color: red; }
+
+.event-info #post-button {
+  margin: 0; }
+
+.event-info div#commentTitle {
+  color: #e47336;
+  font-family: 'League-Spartan';
+  margin: 30px;
+  padding-top: 30px; }
+
+.event-info .comment {
+  font-size: 1.4rem;
+  margin-bottom: 30px !important; }

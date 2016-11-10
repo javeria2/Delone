@@ -6,7 +6,7 @@ var express  = require('express'),
 //========= USER AUTH ===========//
 //signin
 router.post('/signup', function(req, res){
-	var newUser = new User({username: req.body.username});
+	var newUser = new User({username: req.body.username, about: req.body.about, img: req.body.img});
 	User.register(newUser, req.body.password, function(err, user){
 		if(err){
 			console.log(err);

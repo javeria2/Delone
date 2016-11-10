@@ -16,12 +16,16 @@
   }
   #btn_login {
   	background-color: $type-it-color;
+    position: relative;
+    top: -30px;
   }
   .spt-text {
   	color: $type-it-color;
   }
   .lower-cap {
   	margin-bottom: 20px;
+    position: relative;
+    top: -30px;
   }
   .card-title {
   	font-family: 'League-Spartan';
