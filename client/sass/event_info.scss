@@ -1,6 +1,5 @@
 .event-info{
 	.event-header {
-		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   		background-color: #fff;
   		padding: 0px;
   		min-height: 600px;
@@ -9,7 +8,7 @@
         background: -webkit-linear-gradient(to left, #ffd89b , #19547b); /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to left, #ffd89b , #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
          
-  			min-height: 400px;
+  			height: 400px;
   			background-color: #aaa;
   			img {
   				max-width: 60%;
@@ -17,12 +16,16 @@
   			a {
   				color: black;
   			}
+        #owner {
+          font-family: 'League-Spartan';
+          color: #fff;
+        }
   		}
   		.event-details {
-			background: #141E30; /* fallback for old browsers */
-			background: -webkit-linear-gradient(to left, #141E30 , #243B55); /* Chrome 10-25, Safari 5.1-6 */
-			background: linear-gradient(to left, #141E30 , #243B55); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        	min-height: 400px;
+  			background: #141E30; /* fallback for old browsers */
+  			background: -webkit-linear-gradient(to left, #141E30 , #243B55); /* Chrome 10-25, Safari 5.1-6 */
+  			background: linear-gradient(to left, #141E30 , #243B55); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        height: 400px;
   			color: white;
   			span#name {
   				font-size: 4rem;
@@ -37,7 +40,7 @@
   			}
   		}
   		.event-map{
-  			min-height: 400px;
+  			height: 400px;
   			padding: 0 !important;
   			#map{
   				min-height: 400px;
@@ -48,7 +51,7 @@
 	}
 	.event-footer {
 		#info-text {
-			font-size: 1.4rem;
+			font-size: 1.3rem;
 			font-weight: 700;
 		}
 		td {
@@ -61,6 +64,13 @@
 		span#type {
 			color: red;
 		}
+    p#delone-type {
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    p{
+      font-size: 1.3rem;
+    }
 	}
 	#post-button{
 		margin: 0;
@@ -73,7 +83,7 @@
     padding-top: 30px;
   }
   .comment {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     margin-bottom: 30px !important;
   }
 }

@@ -5,22 +5,21 @@
 <div class="section"></div>
 
 <div class="event-info">
-	<div class="container">
+	<div class="container z-depth-1">
 		<div class="event-header">
 			<div class="row" style="margin: 0px; background-color: #fff;">
 				<div class="col s4 event-owner">
 					<div class="center">
 						<div class="section"></div>
 						<div class="section"></div>
-						<a href="#!">
+						<a href="#/users/{{event.author.id}}">
 							<img class="circle responsive-img" src={{event.author.img}} alt="user-img">
-							<p>{{event.author.username}}</p>
+							<p id="owner">{{event.author.username}}</p>
 						</a>
 					</div>
 				</div>
 				<div class="col s4 event-details">
 					<div class="center">
-						<div class="section"></div>
 						<div class="section"></div>
 						<div class="section"></div>
 						<span id="name">{{event.event_name}}</span><br>
@@ -40,10 +39,10 @@
 			<div class="event-footer">
 				<div class="center">
 					<div class="section"></div>
-					<p><span id="info-text">A message from the delone owner:</span> {{event.msg}}</p>
+					<p><span id="info-text">{{event.author.username}} says:</span> {{event.msg}}</p>
 
 					<div class="section"></div>
-					<p>Delone type: <span id="type">restricted</span></p>
+					<p id="delone-type">Delone type: <span id="type">restricted</span></p>
 					<div class="section"></div>
 
 					<div id="guest-list">Guest List:</div>
@@ -120,11 +119,11 @@
 				<div ng-repeat="comment in event.comments">
 					<div class="ui comments">
 						<div class="comment">
-						    <a class="avatar">
+						    <a href="#/users/{{comment.author.id}}" class="avatar">
 						      <img src={{comment.author.img}} style="border-radius: 100%;">
 						    </a>
 						    <div class="content">
-						      <a class="author">{{comment.author.username}}</a>
+						      <a href="#/users/{{comment.author.id}}" class="author">{{comment.author.username}}</a>
 						      <div class="metadata">
 						        <span class="date">{{comment.date}}</span>
 						      </div>

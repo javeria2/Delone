@@ -12,6 +12,7 @@ var express        = require('express'),
 var eventRoutes    = require('./routes/events'),
     commentRoutes  = require('./routes/comments'),
     authRoutes     = require('./routes/auth');
+    usersRoutes     = require('./routes/users');
 
 mongoose.Promise = global.Promise;
 //connect to mongoose
@@ -39,9 +40,10 @@ passport.deserializeUser(User.deserializeUser());
 //include all the RESTful routes
 app.use('/events', eventRoutes);
 app.use('/events', commentRoutes);
+app.use(usersRoutes);
 app.use(authRoutes);
 
 //start up the server
-app.listen(process.env.PORT || 5000, function(){
+app.listen(process.env.PORT || 8080, function(){
 	console.log('listening!');
 });

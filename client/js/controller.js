@@ -123,11 +123,8 @@ delone.controller('eventInfoController', ['$rootScope', '$scope', '$http', '$loc
         this.map.setCenter(myLatlng);
     });
     
-
-
     $scope.comment = '';
     $scope.showComment = [];
-
     $scope.submitComment = function(){
         n = new Date();
         var comment = {
@@ -140,6 +137,14 @@ delone.controller('eventInfoController', ['$rootScope', '$scope', '$http', '$loc
             $scope.comment = '';
         });
     }
+}]);
+
+//user profile controller
+delone.controller('profileController', ['$scope', '$http', '$rootScope', '$location', function($scope, $http, $rootScope, $location){
+    var url = $location.path();
+    $http.get(url).success(function(response) {
+        $scope.currUser = response;
+    });
 }]);
 
 //controller for user auth

@@ -1,0 +1,60 @@
+<div ng-include="'views/navbar.html'"></div>
+<a class="btn-floating btn-large waves-effect waves-light tooltip" id="back-button" title="go back" href="#/events"><i class="fa fa-angle-left"></i></a>
+
+<div class="section"></div>
+<div class="section"></div>
+<div class="container z-depth-1" style="background-color: #fff">
+	<div class="user-header">
+		<div class="row" style="margin: 0px;">
+			<div class="col s4 curr-user">
+				<div class="center">
+					<div class="section"></div>
+					<div class="section"></div>
+					<img class="circle responsive-img" src={{currUser.img}} alt="user avatar">
+				</div>
+			</div>
+			<div class="col s4 user-details">
+				<div class="section"></div>
+				<div class="section"></div>
+				<p id="title">{{currUser.username}}</p>
+				<blockquote>{{currUser.about}}</blockquote>
+				<div class='section'></div>
+				<span class="follow-panel">12 followers</span>
+				<span class="follow-panel">5 following</span>
+			</div>
+			<div class="col s4 user-settings">
+				<div ng-if="user._id === currUser._id"><a href="#!"><i class="fa fa-cogs"></i></a></div>
+				<div ng-if="user._id !== currUser._id"><a id="post-button" class="waves-effect waves-light btn"><i id="follow" class="icon-user-add material-icons left"></i> <span>follow</span></a></div>
+			</div>
+		</div>
+		<div class='section'></div>
+	</div>
+</div>
+
+<div class="container z-depth-1 user-events" style="background-color: #fff">
+	<div class="row">
+		<div class="col s6">
+			<div class="center">
+				<a href="#!">Attended</a>
+			</div>
+		</div>
+		<div class="col s6">
+			<div class="center">
+				<a href="#!">Hosted</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="fixed-action-btn">
+	<a href="#/events/new" id="new-event-button" class="btn-floating btn-large waves-effect waves-light tooltip" title="New event!">
+	  <i class="large material-icons">mode_edit</i>
+	</a>
+</div>
+
+<style type="text/css">
+	body {
+		background: rgb(241, 241, 241);
+    	font-family: 'Lato';
+	}
+</style>

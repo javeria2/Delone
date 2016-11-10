@@ -1,0 +1,60 @@
+.user-header {
+	img {
+		max-width: 70% !important;
+	}
+}
+
+.user-details {
+	p#title {
+		font-size: 4rem;
+		font-family: 'League-Spartan';
+		color: $type-it-color;
+	}
+	span:nth-of-type(2) {
+		margin: 30px;
+	}
+}
+
+.col.s4{
+	padding: 0px !important;
+}
+
+.user-settings {
+	a {
+		color: $type-it-color !important;
+		float: right;
+	}
+	i {
+		float: right;
+		margin: 30px;
+	}
+
+	i#follow {
+		margin: 0;
+	}
+
+	#post-button {
+		color: #fff !important;
+		span {
+			margin-left: 10px;
+		}
+	}
+}
+
+.follow-panel {
+	color: $type-it-color;
+	text-transform: uppercase;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+.user-events {
+	margin-top: 10px !important;
+	a {
+		position: relative;
+		top: -5px;
+		text-transform: uppercase;
+		color: $type-it-color;
+		font-size: 1rem;
+	}
+}

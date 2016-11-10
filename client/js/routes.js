@@ -29,6 +29,13 @@ delone.config(function($routeProvider){
 		templateUrl: 'views/authenticate.html',
 		controller: 'authController'
 	})
+	.when('/users/:id', {
+		templateUrl: 'views/profile.html',
+		controller: 'profileController',
+		resolve: {
+			loggedin: checkLoggedIn
+		}
+	})
 	.otherwise('/events')
 });
 

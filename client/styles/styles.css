@@ -229,7 +229,6 @@ body {
   background: #e47336 !important; }
 
 .event-info .event-header {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   background-color: #fff;
   padding: 0px;
   min-height: 600px; }
@@ -240,12 +239,15 @@ body {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #ffd89b, #19547b);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    min-height: 400px;
+    height: 400px;
     background-color: #aaa; }
     .event-info .event-header .event-owner img {
       max-width: 60%; }
     .event-info .event-header .event-owner a {
       color: black; }
+    .event-info .event-header .event-owner #owner {
+      font-family: 'League-Spartan';
+      color: #fff; }
   .event-info .event-header .event-details {
     background: #141E30;
     /* fallback for old browsers */
@@ -253,7 +255,7 @@ body {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #141E30, #243B55);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    min-height: 400px;
+    height: 400px;
     color: white; }
     .event-info .event-header .event-details span#name {
       font-size: 4rem; }
@@ -264,7 +266,7 @@ body {
         margin: 30px;
         margin-right: 0px; }
   .event-info .event-header .event-map {
-    min-height: 400px;
+    height: 400px;
     padding: 0 !important; }
     .event-info .event-header .event-map #map {
       min-height: 400px;
@@ -272,7 +274,7 @@ body {
       padding: 0 !important; }
 
 .event-info .event-footer #info-text {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700; }
 
 .event-info .event-footer td {
@@ -285,6 +287,13 @@ body {
 .event-info .event-footer span#type {
   color: red; }
 
+.event-info .event-footer p#delone-type {
+  font-weight: 700;
+  font-size: 1.3rem; }
+
+.event-info .event-footer p {
+  font-size: 1.3rem; }
+
 .event-info #post-button {
   margin: 0; }
 
@@ -295,5 +304,50 @@ body {
   padding-top: 30px; }
 
 .event-info .comment {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   margin-bottom: 30px !important; }
+
+.user-header img {
+  max-width: 70% !important; }
+
+.user-details p#title {
+  font-size: 4rem;
+  font-family: 'League-Spartan';
+  color: #e47336; }
+
+.user-details span:nth-of-type(2) {
+  margin: 30px; }
+
+.col.s4 {
+  padding: 0px !important; }
+
+.user-settings a {
+  color: #e47336 !important;
+  float: right; }
+
+.user-settings i {
+  float: right;
+  margin: 30px; }
+
+.user-settings i#follow {
+  margin: 0; }
+
+.user-settings #post-button {
+  color: #fff !important; }
+  .user-settings #post-button span {
+    margin-left: 10px; }
+
+.follow-panel {
+  color: #e47336;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400; }
+
+.user-events {
+  margin-top: 10px !important; }
+  .user-events a {
+    position: relative;
+    top: -5px;
+    text-transform: uppercase;
+    color: #e47336;
+    font-size: 1rem; }
