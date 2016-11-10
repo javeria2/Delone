@@ -32,6 +32,7 @@ delone.config(function($routeProvider){
 	.otherwise('/events')
 });
 
+//store list of default user avatars
 delone.constant('AVATARS', {
 	urls: [
 		"../rsrcs/imgs/1.png",

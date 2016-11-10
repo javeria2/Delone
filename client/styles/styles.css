@@ -234,11 +234,11 @@ body {
   padding: 0px;
   min-height: 600px; }
   .event-info .event-header .event-owner {
-    background: #FFB75E;
+    background: #ffd89b;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #FFB75E, #ED8F03);
+    background: -webkit-linear-gradient(to left, #ffd89b, #19547b);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #FFB75E, #ED8F03);
+    background: linear-gradient(to left, #ffd89b, #19547b);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     min-height: 400px;
     background-color: #aaa; }
