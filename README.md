@@ -1,6 +1,6 @@
 # Delone - don't eat alone.
 
-- Have you ever been subjected to a completely new surrounding, like join a new school, get a new job and found yourself with no one to eat or hangout with?  This application aims to solve this frequent user problem by providing a platform where poeple could interact and arrange to eat together. 
+- Have you ever been subjected to a completely new surrounding, like join a new school, get a new job and found yourself with no one to eat out with?  This application aims to solve this frequent user problem by providing a platform where poeple could interact and arrange to eat together. 
 
 ## Tech Specs - 
 * __Angular__ used for routing and data-binding on the client side. (SPA)
