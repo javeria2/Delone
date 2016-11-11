@@ -35,12 +35,37 @@
 	 <div class="row">
 	    <div class="col s12">
 	      <ul class="tabs">
-	        <li class="tab col s6"><a href="#test1">Attended</a></li>
-	        <li class="tab col s6"><a class="active" href="#test2">Hosted</a></li>
+	        <li class="tab col s6"><a href="#test1">Hosted</a></li>
+	        <li class="tab col s6"><a class="active" href="#test2">Attended</a></li>
 	      </ul>
 	    </div>
 	    <div id="test1" class="col s12">
-	    	Attended delones will be here!
+
+	    	<div class="container event-grid">
+				<div masonry style="text-align: center; max-width: 740px;margin: 0 auto;">
+				    <div class="masonry-brick" ng-repeat="event in currUserEvents" style="margin: 0 auto;">
+				        <div class="grid-item" style="margin: 10px">
+				        	<div class="card">
+							    <div class="card-image waves-effect waves-block waves-light">
+							      <img class="activator" src="{{event.img}}" style="min-height: 60px;">
+							      <span class="event-img card-title activator white-text truncate"s>{{event.event_name}}</span>
+							    </div>
+							    <div class="card-content">
+							      <span class="card-title activator red-text text-darken-3">{{event.date}} {{event.time}}</span>
+							      <p class="card-action"><div class="chip">{{event.count}} {{event.count == 1 ? 'person' : 'people'}} can tag along.</div></p>
+							    </div>
+							    <div class="card-reveal">
+							      <span class="card-title grey-text text-darken-4" style="font-weight: 400; font-size: 2rem; text-transform: uppercase;">{{event.event_name}}<i class="material-icons right">close</i></span>
+							      <p class="card-action">{{event.msg}}</p>
+							      <p class="card-action">{{event.place}}</p>
+							      <a class="waves-effect waves-light btn-large" href="#/events/{{event._id}}">Find more</a>
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 	    </div>
 	    <div id="test2" class="col s12">
 	    	Hosted delones will be here!

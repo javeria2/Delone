@@ -45,36 +45,22 @@
 					<p id="delone-type">Delone type: <span id="type">restricted</span></p>
 					<div class="section"></div>
 
-					<div id="guest-list">Guest List:</div>
+					<button id="post-button" class="btn waves-effect waves-light" ng-click="addGuest()">Join in!</button>
+
+					<div class="section"></div>
+					<div id="guest-list" ng-show="guestList.length !== 0">Guest List:</div>
 					 <table class="striped">
 				        <tbody>
-				          <tr>
+				          <tr ng-repeat="guest in guestList">
 				          	<td>
 				          	  <div class="chip">
-							    <img src="../rsrcs/imgs/1.png" alt="Contact Person">
-							    Like Mike
+							    <img src={{guest.img}} alt="Contact Person">
+							    {{guest.username}}
 							  </div>
 					        </td>
 				          </tr>
-				          <tr>
-				          	<td>
-				            	<div class="chip">
-							    	<img src="../rsrcs/imgs/3.png" alt="Contact Person">
-							    	Alan Walker
-							  	</div>
-				          </td>
-				          </tr>
-				          <tr>
-				          	<td>
-				            	<div class="chip">
-							    	<img src="../rsrcs/imgs/4.png" alt="Contact Person">
-							    	Dimitri Vegas
-							  	</div>
-				          </td>
-				          </tr>
 				        </tbody>
 				    </table>
-
 
 				</div>
 			</div>

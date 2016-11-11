@@ -38,4 +38,27 @@ router.get('/:id', function(req, res){
 	});	
 });  
 
+//get delone belonging to specific user with userId = id
+router.get('/users/:id', function(req, res){
+	delone.find({"author.id":req.params.id}, function(err, event){
+		if(err){
+			console.log(err);
+			return;
+		}
+		res.json(event);
+	});
+});
+
+router.post('/guests/:id', function(req, res){
+	delone.findById(req.params.id, function(err, event){
+		if(err){
+			console.log(err);
+			return;
+		}
+		var guest = {id: req.user._id, username: req.user.username, img: req.user.img};
+		event.guestList.push(guest);
+		event.save();
+		res.json(guest);
+	});
+});
 module.exports = router;

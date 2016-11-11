@@ -106,6 +106,7 @@ delone.controller('eventInfoController', ['$rootScope', '$scope', '$http', '$loc
     var url = $location.path();
     $http.get(url).success(function(response) {
         $scope.event = response;
+        $scope.guestList = response.guestList;
         var options = {
             center: new google.maps.LatLng($scope.event.latitude, $scope.event.longitude),
             zoom: 13,
@@ -137,6 +138,13 @@ delone.controller('eventInfoController', ['$rootScope', '$scope', '$http', '$loc
             $scope.comment = '';
         });
     }
+
+
+    $scope.addGuest = function() {
+        $http.post('/events/guests/'+$scope.event._id).success(function(response){
+            $scope.guestList.push(response);
+        });
+    }
 }]);
 
 //user profile controller
@@ -166,6 +174,10 @@ delone.controller('profileController', ['$scope', '$http', '$rootScope', '$locat
                 $scope.following.push(response);
             });
         }
+
+        $http.get('/events/users/' + $scope.currUser._id).success(function(response){
+            $scope.currUserEvents = response;
+        });
     });
 
 

@@ -24,7 +24,12 @@ var eventSchema = new mongoose.Schema({
 		},
 		username: String,
 		img: String
-	}
+	},
+	guestList: [{
+		id: String,
+		username: String,
+		img: String
+	}]
 });
 
 module.exports = mongoose.model("delone", eventSchema);
