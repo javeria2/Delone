@@ -13,6 +13,7 @@ router.get('/users/:id', function(req, res){
 	})
 });
 
+//follow a user, add to appropriate followers and following arrays
 router.post('/users/follow/:followingId', function(req, res){
 	User.findById(req.params.followingId, function(err, user){
 		if(err){
