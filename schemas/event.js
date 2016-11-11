@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+
 //setup database schema
 var eventSchema = new mongoose.Schema({
 	event_name: String,

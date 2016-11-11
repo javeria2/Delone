@@ -144,7 +144,38 @@ delone.controller('profileController', ['$scope', '$http', '$rootScope', '$locat
     var url = $location.path();
     $http.get(url).success(function(response) {
         $scope.currUser = response;
+        $scope.isFollowing = false;
+        $scope.numFollowers = $scope.currUser.followers.length;
+
+        for(var i=0; i < $scope.currUser.followers.length; i++){
+            if($scope.currUser.followers[i].id === $rootScope.user._id) {
+                $scope.isFollowing = true;
+                break;
+            }
+        }
+        $scope.followers = [{}];
+        for(var i=0; i < $scope.currUser.followers.length; i++){
+            $http.get('/users/' + $scope.currUser.followers[i].id).success(function(response){
+                $scope.followers.push(response);
+            });
+        }
+
+        $scope.following = [{}];
+        for(var i=0; i < $scope.currUser.following.length; i++){
+            $http.get('/users/' + $scope.currUser.following[i].id).success(function(response){
+                $scope.following.push(response);
+            });
+        }
     });
+
+
+    $scope.follow = function() {
+        $http.post('/users/follow/' + $scope.currUser._id).success(function(response){
+            $scope.isFollowing = true;
+            $scope.numFollowers += 1;
+        });
+    }
+
 }]);
 
 //controller for user auth
