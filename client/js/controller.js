@@ -164,8 +164,10 @@ delone.controller('eventInfoController', ['$rootScope', '$scope', '$http', '$loc
         $http.post('/events/guests/'+$scope.event._id).success(function(response){
             $scope.guestList.push(response);
             $('.join-in-button').hide();
+            $http.post('/users/attended/'+$scope.event._id).success(function(response){});
         });
     }
+
 }]);
 
 //user profile controller
@@ -200,6 +202,14 @@ delone.controller('profileController', ['$scope', '$http', '$rootScope', '$locat
         $http.get('/events/users/' + $scope.currUser._id).success(function(response){
             $scope.currUserEvents = response;
         });
+
+        $scope.currUserAttEvents = [{}];
+        for(var i=0; i < $scope.currUser.attendedEvents.length; i++){
+            $http.get('/events/get/' + $scope.currUser.attendedEvents[i].id).success(function (response) {
+                $scope.currUserAttEvents.push(response);
+            })
+        }
+
     });
 
     //add new user to followers

@@ -25,13 +25,18 @@
 			<div class="col s4 user-settings">
 				<div ng-if="user._id === currUser._id"><a href="#!"><i class="fa fa-cogs"></i></a></div>
 				<div ng-if="user._id !== currUser._id"><a ng-click="follow()" ng-show="!isFollowing" id="post-button" class="waves-effect waves-light btn"><i id="follow" class="icon-user-add material-icons left"></i> <span>follow</span></a></div>
+
+				<!-- chat -->
+				<div ng-if="user._id !== currUser._id"><a id="post-button-2" class="waves-effect waves-light btn"><i id="follow" class="icon-chatbubble-working material-icons left"></i> <span>Chat</span></a></div>
 			</div>
 		</div>
 		<div class='section'></div>
 	</div>
 </div>
 
-<div class="container z-depth-1" style="margin-top: 10px;">
+<div class="clearfix"></div>
+
+<div class="container" style="margin-top: 10px;">
 	 <div class="row">
 	    <div class="col s12">
 	      <ul class="tabs">
@@ -40,7 +45,6 @@
 	      </ul>
 	    </div>
 	    <div id="test1" class="col s12">
-
 	    	<div class="container event-grid">
 				<div masonry style="text-align: center; max-width: 740px;margin: 0 auto;">
 				    <div class="masonry-brick" ng-repeat="event in currUserEvents" style="margin: 0 auto;">
@@ -65,10 +69,36 @@
 					</div>
 				</div>
 			</div>
-
 	    </div>
-	    <div id="test2" class="col s12">
-	    	Hosted delones will be here!
+	    <div id="test2" class="col s12" style="box-shadow: none !important;">
+	    	<div class="container event-grid">
+				<div masonry style="text-align: center; max-width: 740px;margin: 0 auto;">
+				    <div class="masonry-brick" ng-repeat="event in currUserAttEvents" style="margin: 0 auto;">
+					        
+				    <div ng-if="event._id !== undefined">
+
+					        <div class="grid-item" style="margin: 10px">
+					        	<div class="card">
+								    <div class="card-image waves-effect waves-block waves-light">
+								      <img class="activator" src="{{event.img}}" style="min-height: 60px;">
+								      <span class="event-img card-title activator white-text truncate"s>{{event.event_name}}</span>
+								    </div>
+								    <div class="card-content">
+								      <span class="card-title activator red-text text-darken-3">{{event.date}} {{event.time}}</span>
+								      <p class="card-action"><div class="chip">{{event.count}} {{event.count == 1 ? 'person' : 'people'}} can tag along.</div></p>
+								    </div>
+								    <div class="card-reveal">
+								      <span class="card-title grey-text text-darken-4" style="font-weight: 400; font-size: 2rem; text-transform: uppercase;">{{event.event_name}}<i class="material-icons right">close</i></span>
+								      <p class="card-action">{{event.msg}}</p>
+								      <p class="card-action">{{event.place}}</p>
+								      <a class="waves-effect waves-light btn-large" href="#/events/{{event._id}}">Find more</a>
+								    </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 	    </div>
 	</div>
 </div>

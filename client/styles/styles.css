@@ -284,8 +284,11 @@ body {
   font-weight: 700;
   margin-bottom: 10px; }
 
-.event-info .event-footer span#type {
-  color: red; }
+.event-info .event-footer .redColor {
+  color: red !important; }
+
+.event-info .event-footer .greenColor {
+  color: green !important; }
 
 .event-info .event-footer p#delone-type {
   font-weight: 700;
@@ -342,11 +345,37 @@ body {
   .user-settings #post-button span {
     margin-left: 10px; }
 
+.user-settings a#post-button-2 {
+  color: #fff !important;
+  background: #e47336 !important;
+  font-weight: 400;
+  font-size: 1.2rem;
+  float: none;
+  position: relative;
+  top: 350px;
+  left: 220px; }
+  .user-settings a#post-button-2 i {
+    margin-right: 10px; }
+
 .follow-panel {
   color: #e47336;
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 400; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+* html .clearfix {
+  height: 0%; }
+
+.clearfix {
+  display: block; }
 
 .user-events {
   margin-top: 10px !important; }

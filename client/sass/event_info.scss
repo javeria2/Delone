@@ -61,9 +61,12 @@
 			font-weight: 700;
 			margin-bottom: 10px;
 		}
-		span#type {
-			color: red;
-		}
+    .redColor {
+      color: red !important;
+    }
+    .greenColor {
+      color: green !important;
+    }
     p#delone-type {
       font-weight: 700;
       font-size: 1.3rem;

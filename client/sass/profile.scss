@@ -44,6 +44,19 @@
 			margin-left: 10px;
 		}
 	}
+	a#post-button-2 {
+		color: #fff !important;
+		background: $type-it-color !important;
+		font-weight: 400;
+		font-size: 1.2rem;
+		float: none;
+		position: relative;
+	    top: 350px;
+	    left: 220px;
+		i {
+			margin-right: 10px;
+		}
+	}
 }
 
 .follow-panel {
@@ -52,6 +65,17 @@
 	font-size: 1rem;
 	font-weight: 400;
 }
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+* html .clearfix { height: 0%; }
+.clearfix { display: block; }
 
 .user-events {
 	margin-top: 10px !important;

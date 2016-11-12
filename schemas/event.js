@@ -26,7 +26,10 @@ var eventSchema = new mongoose.Schema({
 		img: String
 	},
 	guestList: [{
-		id: String,
+		id: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'User'
+		},
 		username: String,
 		img: String
 	}],

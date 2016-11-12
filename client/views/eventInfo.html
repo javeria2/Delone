@@ -42,7 +42,7 @@
 					<p><span id="info-text">{{event.author.username}} says:</span> {{event.msg}}</p>
 
 					<div class="section"></div>
-					<p id="delone-type">Delone type: <span id="type">restricted</span></p>
+					<p id="delone-type">Delone type: <span ng-class="event.eventType === 'restricted' ? 'redColor' : 'greenColor' ">{{event.eventType}}</span></p>
 					<div class="section"></div>
 
 					<button id="post-button" class="btn waves-effect waves-light join-in-button" ng-click="addGuest()" ng-show="isOnGuestList">Join in!</button>

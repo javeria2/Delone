@@ -38,6 +38,17 @@ router.get('/:id', function(req, res){
 	});	
 });  
 
+//get specific event by id 
+router.get('/get/:id', function(req, res){
+	delone.findById(req.params.id, function(err, event){
+		if(err) {
+			console.log(err);
+			return;
+		}
+		res.json(event);
+	});
+});
+
 //get delone belonging to specific user with userId = id
 router.get('/users/:id', function(req, res){
 	delone.find({"author.id":req.params.id}, function(err, event){
@@ -49,6 +60,7 @@ router.get('/users/:id', function(req, res){
 	});
 });
 
+//post a new user to guest list
 router.post('/guests/:id', function(req, res){
 	delone.findById(req.params.id, function(err, event){
 		if(err){

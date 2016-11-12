@@ -36,4 +36,16 @@ router.post('/users/follow/:followingId', function(req, res){
 	});
 });
 
+//add an event to user attended list
+router.post('/users/attended/:id', function(req, res){
+	User.findById(req.user._id, function(err, user){
+		if(err){
+			console.log(err);
+			return;
+		}
+		user.attendedEvents.push({id: req.params.id});
+		user.save();
+		res.json(user);
+	});
+});
 module.exports = router;
