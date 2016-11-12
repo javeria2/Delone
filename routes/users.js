@@ -2,6 +2,7 @@ var express  = require('express'),
 	router   = express.Router(),
     User     = require('../schemas/user');
 
+//========= USER ROUTES ===========//
 //get user based on id
 router.get('/users/:id', function(req, res){
 	User.findById(req.params.id, function(err, user){
