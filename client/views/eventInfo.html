@@ -45,7 +45,7 @@
 					<p id="delone-type">Delone type: <span id="type">restricted</span></p>
 					<div class="section"></div>
 
-					<button id="post-button" class="btn waves-effect waves-light" ng-click="addGuest()">Join in!</button>
+					<button id="post-button" class="btn waves-effect waves-light join-in-button" ng-click="addGuest()" ng-show="isOnGuestList">Join in!</button>
 
 					<div class="section"></div>
 					<div id="guest-list" ng-show="guestList.length !== 0">Guest List:</div>

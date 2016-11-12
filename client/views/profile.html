@@ -86,11 +86,11 @@
     	<div ng-repeat="follower in followers">
 			<div class="ui comments">
 				<div class="comment">
-				    <a class="avatar">
+				    <a ng-click="redirect(follower._id)" class="avatar">
 				      <img src={{follower.img}} style="border-radius: 100%;">
 				    </a>
 				    <div class="content">
-				      <a class="author">{{follower.username}}</a>
+				      <a ng-click="redirect(follower._id)" class="author">{{follower.username}}</a>
 				      <div class="text">
 				        {{follower.about}}
 				      </div>
@@ -101,17 +101,17 @@
     </div>
   </div>
 
-    <!-- Modal Structure for following -->
+  <!-- Modal Structure for following -->
   <div id="modal2" class="modal bottom-sheet">
     <div class="modal-content">
     	<div ng-repeat="follower in following">
 			<div class="ui comments">
 				<div class="comment">
-				    <a class="avatar">
+				    <a ng-click="redirect(follower._id)" class="avatar">
 				      <img src={{follower.img}} style="border-radius: 100%;">
 				    </a>
 				    <div class="content">
-				      <a class="author">{{follower.username}}</a>
+				      <a ng-click="redirect(follower._id)" class="author">{{follower.username}}</a>
 				      <div class="text">
 				        {{follower.about}}
 				      </div>

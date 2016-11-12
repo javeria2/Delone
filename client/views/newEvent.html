@@ -75,6 +75,20 @@
               <label for="img">Leave a nice image url</label>
             </div>
 
+
+            <!-- event type -->
+            <div class="row">
+              <div class="col s4"></div>
+              <div class="col s4">
+                <select required ng-model="eventType">
+                  <option value="" disabled selected>Select event type</option>
+                  <option value="open">open</option>
+                  <option value="restricted">restricted</option>
+                </select>
+              </div>
+              <div class="col s4"></div>
+            </div>
+
             <button id="post-button" class="btn waves-effect waves-light" ng-click="addEvent();">Create event! <i class="material-icons right">send</i></button>
           </form>
         </div>

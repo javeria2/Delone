@@ -2,10 +2,12 @@
 
 // home page controller
 delone.controller('mainController', function($scope) {
+    //add a new class to the ng-view 
     $scope.pageClass = 'page-home';
 });
 
 delone.controller('navBarController', ['$rootScope', '$http', '$location', '$scope', function($rootScope, $http, $location, $scope){
+    //implement user log out
     $scope.logout = function() {
         $http.get('/logout').success(function(res){
             $rootScope.user = null;
@@ -16,25 +18,29 @@ delone.controller('navBarController', ['$rootScope', '$http', '$location', '$sco
 
 //events page controller
 delone.controller('eventController', ['$rootScope','$scope', '$http', '$location', function($rootScope, $scope, $http, $location){
+    //callback for loading all events
 	$scope.loadEvents = function(response){
 		$scope.events = response;
 	}
 
+    //load all the events from db
 	$scope.all = function() {
 		$http.get('/events').success($scope.loadEvents);
 	}
 
+    //route to a specific event page
     $scope.route = function(){
         $location.path('/events/' + $scope.events._id);
     }
 
+    //execute all function
 	$scope.all();
 }]);
 
 // new events controller
 delone.controller('newEventController', ['$rootScope','$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {
+
     //add a new event to the database
-    
     $scope.addEvent = function() {
         var newEvent = {
             event_name : $scope.event_name,
@@ -50,7 +56,8 @@ delone.controller('newEventController', ['$rootScope','$scope', '$http', '$locat
                 id: $rootScope.user._id,
                 username: $rootScope.user.username,
                 img: $rootScope.user.img
-            }
+            },
+            eventType: $scope.eventType
         }
         $http.post('/events', newEvent).success(function(response) {
             $location.path('/events');
@@ -104,6 +111,8 @@ delone.controller('newEventController', ['$rootScope','$scope', '$http', '$locat
 //controller to show event information
 delone.controller('eventInfoController', ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location){
     var url = $location.path();
+
+    //get relevant event info
     $http.get(url).success(function(response) {
         $scope.event = response;
         $scope.guestList = response.guestList;
@@ -122,10 +131,21 @@ delone.controller('eventInfoController', ['$rootScope', '$scope', '$http', '$loc
             animation: google.maps.Animation.DROP
         });
         this.map.setCenter(myLatlng);
+
+        $scope.isOnGuestList = true;
+        if($rootScope.user._id === $scope.event.author.id){
+            $scope.isOnGuestList = false;
+        }
+        $scope.guestList.forEach(function(guest){
+            if(guest.id === $rootScope.user._id) {
+                $scope.isOnGuestList = false;
+            }
+        });
     });
     
     $scope.comment = '';
     $scope.showComment = [];
+    //post new comment
     $scope.submitComment = function(){
         n = new Date();
         var comment = {
@@ -139,10 +159,11 @@ delone.controller('eventInfoController', ['$rootScope', '$scope', '$http', '$loc
         });
     }
 
-
+    //add new user to guest list
     $scope.addGuest = function() {
         $http.post('/events/guests/'+$scope.event._id).success(function(response){
             $scope.guestList.push(response);
+            $('.join-in-button').hide();
         });
     }
 }]);
@@ -150,13 +171,14 @@ delone.controller('eventInfoController', ['$rootScope', '$scope', '$http', '$loc
 //user profile controller
 delone.controller('profileController', ['$scope', '$http', '$rootScope', '$location', function($scope, $http, $rootScope, $location){
     var url = $location.path();
+
+    //get user info
     $http.get(url).success(function(response) {
         $scope.currUser = response;
         $scope.isFollowing = false;
         $scope.numFollowers = $scope.currUser.followers.length;
-
         for(var i=0; i < $scope.currUser.followers.length; i++){
-            if($scope.currUser.followers[i].id === $rootScope.user._id) {
+            if($scope.currUser.followers[i].id == $rootScope.user._id) {
                 $scope.isFollowing = true;
                 break;
             }
@@ -180,7 +202,7 @@ delone.controller('profileController', ['$scope', '$http', '$rootScope', '$locat
         });
     });
 
-
+    //add new user to followers
     $scope.follow = function() {
         $http.post('/users/follow/' + $scope.currUser._id).success(function(response){
             $scope.isFollowing = true;
@@ -188,6 +210,12 @@ delone.controller('profileController', ['$scope', '$http', '$rootScope', '$locat
         });
     }
 
+    //redirect to followed/following user profile
+    $scope.redirect = function(url) {
+        $('#modal1').closeModal();
+        $('#modal2').closeModal();
+        $location.url('/users/' + url);
+    }
 }]);
 
 //controller for user auth
@@ -202,6 +230,7 @@ delone.controller('authController', ['$rootScope','$scope', '$http','$location',
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
+    //log/sign user in
     $scope.authenticate = function(){
         if($scope.buttonText === 'login') {
             var user = {
@@ -225,14 +254,20 @@ delone.controller('authController', ['$rootScope','$scope', '$http','$location',
             });
         }
     }
+
+    //change signup button text
     $scope.changeBtText = function() {
         $scope.buttonText = 'signup';
         $('#about-me').show();
     }
+
+    //login button text
     $scope.loginText = function() {
         $scope.buttonText = 'login';
         $('#about-me').hide();
     }
+
+    //show password on clicking checkbox
     $scope.showPassword = function() {
         var control = $('#test5');
         var obj = document.getElementById('password');

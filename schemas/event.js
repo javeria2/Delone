@@ -29,7 +29,8 @@ var eventSchema = new mongoose.Schema({
 		id: String,
 		username: String,
 		img: String
-	}]
+	}],
+	eventType: String //can be one of 'open' or 'restricted'
 });
 
 module.exports = mongoose.model("delone", eventSchema);
