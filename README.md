@@ -8,6 +8,7 @@
 * __mongoDB__ and __mongoose__ used for data persistence.
 * __Passport.js__ used for local OAuth.
 * __SASS__ used as a pre-processor for manageable and neat css code.
+* __Mocha__ and __Chai__ for unit testing.
 
 ## Installation
 I'll provide a walkthrough for mac users, windows should be similar just the installation commands would slightly differ (a simple google search would pull up those commands for you!) 
