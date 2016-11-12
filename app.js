@@ -4,6 +4,7 @@ var express        = require('express'),
 	mongoose       = require('mongoose'),
 	passport       = require('passport'),
 	LocalStrategy  = require('passport-local'),
+	server         = require('http').createServer(app),
 	delone         = require('./schemas/event'), //include event schema
 	comments       = require('./schemas/comment'),
 	User           = require('./schemas/user');
@@ -44,6 +45,6 @@ app.use(usersRoutes);
 app.use(authRoutes);
 
 //start up the server
-app.listen(process.env.PORT || 8080, function(){
+server.listen(process.env.PORT || 8080, function(){
 	console.log('listening!');
 });
