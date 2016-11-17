@@ -323,8 +323,8 @@ body {
 
 .user-details #custom {
   background: #e47336 !important;
-  padding-left: 10px !important;
-  padding-right: 10px !important; }
+  padding-left: 8px !important;
+  padding-right: 8px !important; }
 
 .col.s4 {
   padding: 0px !important; }
@@ -345,22 +345,10 @@ body {
   .user-settings #post-button span {
     margin-left: 10px; }
 
-.user-settings a#post-button-2 {
-  color: #fff !important;
-  background: #e47336 !important;
-  font-weight: 400;
-  font-size: 1.2rem;
-  float: none;
-  position: relative;
-  top: 350px;
-  left: 220px; }
-  .user-settings a#post-button-2 i {
-    margin-right: 10px; }
-
 .follow-panel {
   color: #e47336;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400; }
 
 .clearfix:after {

@@ -17,17 +17,20 @@
 				<div class="section"></div>
 				<div class="section"></div>
 				<p id="title">{{currUser.username}}</p>
+
 				<blockquote>{{currUser.about}}</blockquote>
 				<div class='section'></div>
 				<span class="follow-panel"><a class="waves-effect waves-light btn modal-trigger1" id="custom" data-target="modal1"><span ng-bind="numFollowers"></span> followers</a></span>
 				<span class="follow-panel"><a class="waves-effect waves-light btn modal-trigger2" id="custom" data-target="modal2">{{currUser.following.length}} following</a></span>
+
+				<!-- chat button  -->
+				<span class="follow-panel" ng-if="user._id !== currUser._id"><a id="custom" class="waves-effect waves-light btn"><i id="follow" class="icon-chatbubble-working material-icons left"></i> <span>Chat</span></a></span>
+
 			</div>
 			<div class="col s4 user-settings">
 				<div ng-if="user._id === currUser._id"><a href="#!"><i class="fa fa-cogs"></i></a></div>
-				<div ng-if="user._id !== currUser._id"><a ng-click="follow()" ng-show="!isFollowing" id="post-button" class="waves-effect waves-light btn"><i id="follow" class="icon-user-add material-icons left"></i> <span>follow</span></a></div>
-
-				<!-- chat -->
-				<div ng-if="user._id !== currUser._id"><a id="post-button-2" class="waves-effect waves-light btn"><i id="follow" class="icon-chatbubble-working material-icons left"></i> <span>Chat</span></a></div>
+				<div ng-if="user._id !== currUser._id"><a ng-click="follow()" ng-show="!isFollowing" id="post-button" class="waves-effect waves-light btn"><i id="follow" class="icon-user-add material-icons left"></i> <span>Follow</span></a></div>
+				<div ng-if="user._id !== currUser._id"><a ng-click="unfollow()" ng-show="isFollowing" id="post-button" class="waves-effect waves-light btn"><i id="follow" class="icon-user-add material-icons left"></i> <span>Unfollow</span></a></div>
 			</div>
 		</div>
 		<div class='section'></div>

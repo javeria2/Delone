@@ -220,6 +220,16 @@ delone.controller('profileController', ['$scope', '$http', '$rootScope', '$locat
         });
     }
 
+    //unfollow a user
+    $scope.unfollow = function() {
+        //delete from appropriate follow and following array
+        $http.delete('/users/follow/' + $scope.currUser._id).success(function (response) {
+            $scope.isFollowing = false;
+            //decrease the count
+            $scope.numFollowers -= 1;             
+        });
+    }
+
     //redirect to followed/following user profile
     $scope.redirect = function(url) {
         $('#modal1').closeModal();
