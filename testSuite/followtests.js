@@ -6,7 +6,7 @@ var assert   = require('chai').assert,
 mongoose.connect("mongodb://localhost/delone");
 
 //setup database schema
-var folloSchema = new mongoose.Schema({
+var followSchema = new mongoose.Schema({
 	event_name: String,
 	place: String,
 	date: String,

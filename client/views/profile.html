@@ -24,7 +24,7 @@
 				<span class="follow-panel"><a class="waves-effect waves-light btn modal-trigger2" id="custom" data-target="modal2">{{currUser.following.length}} following</a></span>
 
 				<!-- chat button  -->
-				<span class="follow-panel" ng-if="user._id !== currUser._id"><a id="custom" class="waves-effect waves-light btn"><i id="follow" class="icon-chatbubble-working material-icons left"></i> <span>Chat</span></a></span>
+				<span class="follow-panel" ng-if="user._id !== currUser._id"><a ng-click="openChat()" id="custom" class="waves-effect waves-light btn"><i id="follow" class="icon-chatbubble-working material-icons left"></i><span>Chat</span></a></span>
 
 			</div>
 			<div class="col s4 user-settings">
@@ -153,6 +153,22 @@
 			</div>
 		</div>
     </div>
+  </div>
+
+  <!-- chat window -->
+  <div class="chat-box">
+  	<div class="chat-head">
+  		<span class="username">{{currUser.username}}</span>
+  		<div class="close">x</div>
+  	</div>
+  	<div class="chat-body-wrap">
+	  	<div class="chat-body">
+	  		<div class="add-msg"></div>
+	  	</div>
+	  	<div class="chat-footer">
+	  		<textarea class="msg-input" placeholder="Type a message..."></textarea>
+	  	</div>
+  	</div>
   </div>
 
 <style type="text/css">

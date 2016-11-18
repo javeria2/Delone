@@ -209,8 +209,74 @@ delone.controller('profileController', ['$scope', '$http', '$rootScope', '$locat
                 $scope.currUserAttEvents.push(response);
             })
         }
-
     });
+
+    /**
+     * CHAT FUNCTIONALITIES
+     */
+    var socket = io.connect();
+    //keep the chat box closed initially
+    $('.chat-box').hide();
+
+    //open the chat modal on clicking chat button
+    $scope.openChat = function () {
+        $('.chat-box').show();
+    }
+
+    //close the chat box on clicking the close button
+    $('.close').on('click', function(event){
+        $('.chat-box').hide();
+    });
+
+    //when we click on the header of the chat box, 
+    //make it smoothly slide down
+    $('.chat-head').on('click', function(event){
+        $('.chat-body-wrap').slideToggle('slow');
+    });
+
+    $('.msg-input').keypress(function(event) {
+        if(event.keyCode == 13) {
+            var msg = $(this).val();
+            socket.emit('send message', {
+                sender: $rootScope.user.username, 
+                message: msg, 
+                img:$rootScope.user.img
+            }); 
+            $(this).val('');
+            $('.chat-body').scrollTop($('.chat-body')[0].scrollHeight);
+        }
+    });
+
+    socket.on('new message', function(data){
+        if(data.sender === $rootScope.user.username){
+            $('<div class="msg-a"><div class="ui comments">\
+                    <div class="comment">\
+                        <a class="avatar">\
+                          <img src="' + data.img + '">\
+                        </a>\
+                        <div class="content">\
+                            <a class="author">' + data.sender + '</a>\
+                            <div class="text">' + data.message + '</div>\
+                        </div>\
+                    </div>\
+                </div></div>').insertBefore('.add-msg');
+        } else {
+            $('<div class="msg-b"><div class="ui comments">\
+                    <div class="comment">\
+                        <a class="avatar">\
+                          <img src="' + data.img + '">\
+                        </a>\
+                        <div class="content">\
+                            <a class="author">' + data.sender + '</a>\
+                            <div class="text">' + data.message + '</div>\
+                        </div>\
+                    </div>\
+                </div></div>').insertBefore('.add-msg');
+        }
+    });
+
+    
+    /************************/
 
     //add new user to followers
     $scope.follow = function() {

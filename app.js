@@ -5,7 +5,6 @@ var express        = require('express'),
 	passport       = require('passport'),
 	LocalStrategy  = require('passport-local'),
 	server         = require('http').createServer(app),
-	io             = require('socket.io').listen(server),
 	delone         = require('./schemas/event'), //include event schema
 	comments       = require('./schemas/comment'),
 	User           = require('./schemas/user');
@@ -14,8 +13,12 @@ var express        = require('express'),
 var eventRoutes    = require('./routes/events'),
     commentRoutes  = require('./routes/comments'),
     authRoutes     = require('./routes/auth');
-    usersRoutes     = require('./routes/users');
+    usersRoutes    = require('./routes/users');
 
+//include chat sockets
+var chat           = require('./chat/chat').listen(server);
+
+//get rid of the mongoose promise error
 mongoose.Promise = global.Promise;
 //connect to mongoose
 mongoose.connect("mongodb://localhost/delone");
