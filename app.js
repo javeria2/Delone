@@ -5,8 +5,6 @@ var express        = require('express'),
 	passport       = require('passport'),
 	LocalStrategy  = require('passport-local'),
 	server         = require('http').createServer(app),
-	delone         = require('./schemas/event'), //include event schema
-	comments       = require('./schemas/comment'),
 	User           = require('./schemas/user');
 
 //include routes
