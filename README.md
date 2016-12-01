@@ -24,5 +24,5 @@ I'll provide a walkthrough for mac users, windows should be similar just the ins
 * In a new terminal tab, type in ```grunt watch``` to start the grunt server. Your changes will automatically be reflected in the browser. 
 
 ### UPDATE -
-App Deployed __[12/1/2016]__
+* App Deployed __[12/1/2016]__ <br>
 Check it out here - [delone.herokuapp.com/](https://delone.herokuapp.com/)
