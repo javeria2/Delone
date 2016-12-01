@@ -23,4 +23,6 @@ I'll provide a walkthrough for mac users, windows should be similar just the ins
 * Download and install the ```grunt cli``` globally by running ```sudo npm install -g grunt-cli``` (__NOTE__: make sure you have the latest version of [node](https://nodejs.org/en/download/) pre-installed). 
 * In a new terminal tab, type in ```grunt watch``` to start the grunt server. Your changes will automatically be reflected in the browser. 
 
-I plan on finishing the application by the next couple of weeks, I'm planning on some super exciting features which I'll put here as I go along. I'll also deploy the app on heroku once I'm done building it.
+### UPDATE -
+App Deployed __[12/1/2016]__
+Check it out here - <a href="delone.herokuapp.com/">delone.herokuapp.com/</a>
