@@ -25,4 +25,4 @@ I'll provide a walkthrough for mac users, windows should be similar just the ins
 
 ### UPDATE -
 App Deployed __[12/1/2016]__
-Check it out here - <a href="delone.herokuapp.com/">delone.herokuapp.com/</a>
+Check it out here - [delone.herokuapp.com/](https://delone.herokuapp.com/)
