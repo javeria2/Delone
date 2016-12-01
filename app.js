@@ -19,8 +19,8 @@ var chat           = require('./chat/chat').listen(server);
 //get rid of the mongoose promise error
 mongoose.Promise = global.Promise;
 //connect mongodb(mLab) to mongoose 
-var db = mongoose.connect("mongodb://localhost/delone");
-// var db = mongoose.connect("mongodb://sanchay:delone@ds115798.mlab.com:15798/delone");
+// var db = mongoose.connect("mongodb://localhost/delone");
+var db = mongoose.connect("mongodb://sanchay:delone@ds115798.mlab.com:15798/delone");
 
 //include body parser for post requests
 app.use(bodyparser.urlencoded({extended: true}));
