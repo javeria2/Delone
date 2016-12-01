@@ -7,6 +7,7 @@ module.exports.listen = function(app){
 		socket.on('send message', function(data){
 			//send the data to the users including ourself 
 			//we use socket.broadcast.emit to send it to everyone except us
+			console.log('emmited');
 			io.sockets.emit('new message', data);
 		});
 	});

@@ -249,6 +249,7 @@ delone.controller('profileController', ['$scope', '$http', '$rootScope', '$locat
 
     socket.on('new message', function(data){
         if(data.sender === $rootScope.user.username){
+            console.log('hi');
             $('<div class="msg-a"><div class="ui comments">\
                     <div class="comment">\
                         <a class="avatar">\
@@ -261,6 +262,7 @@ delone.controller('profileController', ['$scope', '$http', '$rootScope', '$locat
                     </div>\
                 </div></div>').insertBefore('.add-msg');
         } else {
+            console.log('bye');
             $('<div class="msg-b"><div class="ui comments">\
                     <div class="comment">\
                         <a class="avatar">\
@@ -275,7 +277,6 @@ delone.controller('profileController', ['$scope', '$http', '$rootScope', '$locat
         }
     });
 
-    
     /************************/
 
     //add new user to followers
